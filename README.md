@@ -7,11 +7,11 @@ AutoMapper is a convention-based object-oriented mapper that transforms a source
 - 
 
 
-1. Create a new folder named **AspNetCoreAutoMapperDemo** and go to that directory
-    ``
+1. Create a new folder named **AspNetCoreAutoMapperDemo** and go to that directory  
+    ```
     mkdir AspNetCoreAutoMapperDemo
     cd AspNetCoreAutoMapperDemo
-    ``
+    ```
 2. Create a new solution named **AspNetCoreAutoMapperDemo**
     ```
     dotnet new sln -n AspNetCoreAutoMapperDemo
@@ -245,9 +245,9 @@ AutoMapper is a convention-based object-oriented mapper that transforms a source
 
     }
     ```
-We are using the **.NET Reflection** framework to scan the assembly and looking for all classes that are implementing the **IMapFrom** interface. Once we have all those types available, we are simply invoking their Mapping method. 
-Now run the project and check out the Index page is working or not with this configuration update.
-17. To define custom mappings, you need to implement the **Mapping** method available in the **IMapFrom** interface we created above. Suppose we do not want to map the **RegistrationDate** Property of the **Employee** class, we can use **ForMember** method that allows us to customize individual members of the class. We need to specify the property we want to customize and then we can call the ignore method. The ignore method skips the mapping of the current property
+    We are using the **.NET Reflection** framework to scan the assembly and looking for all classes that are implementing the **IMapFrom** interface. Once we have all those types available, we are simply invoking their Mapping method. 
+    Now run the project and check out the Index page is working or not with this configuration update.
+    17. To define custom mappings, you need to implement the **Mapping** method available in the **IMapFrom** interface we created above. Suppose we do not want to map the **RegistrationDate** Property of the **Employee** class, we can use **ForMember** method that allows us to customize individual members of the class. We need to specify the property we want to customize and then we can call the ignore method. The ignore method skips the mapping of the current property  
     ```
     public class EmployeeModel : IMapFrom<Employee>
     {
@@ -263,7 +263,7 @@ Now run the project and check out the Index page is working or not with this con
         }
     }
     ```
-Run the project and we will notice that the data of **RegistrationDate** property is not mapped from **Employee** object to **EmployeeModel** object
+    Run the project and we will notice that the data of **RegistrationDate** property is not mapped from **Employee** object to **EmployeeModel** object
 
 18. The title property of employee David is not specified and this is why Title property column is empty for David. We can tell AutoMapper to replace the null value with any custom value. 
     ```
