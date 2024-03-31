@@ -1,7 +1,16 @@
+using System.Reflection;
+using AspNetCoreAutoMapperDemo;
+using AutoMapper;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Add automapper into services
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly()); 
+
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 var app = builder.Build();
 
